@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "parent": "Shirt",
+        "icon": "https://i.postimg.cc/Gpyv5gYV/imageedit-5-3775755887.png",
+        "type": "Cloth",
+        "Children": [
+            "Shirt",
+            "T-Shirt"
+        ]
+    },
+    {
+        "id": 2,
+        "parent": "Pant",
+        "icon": "https://i.postimg.cc/SNgL2MkT/imageedit-1-7975899682.png",
+        "type": "Cloth",
+        "Children": [
+            "Pant",
+            "Short Pant"
+        ]
+    },
+    {
+        "id": 3,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 4,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 5,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 6,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 7,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 8,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 9,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 10,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 11,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 12,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 13,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 14,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    },
+    {
+        "id": 15,
+        "parent": "Panjabi",
+        "icon": "https://i.postimg.cc/7ZcgXrCS/imageedit-3-4370512746.png",
+        "type": "Cloth",
+        "Children": [
+            "Panjabi",
+            "Jubbah"
+        ]
+    }
+]

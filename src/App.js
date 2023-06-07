@@ -1,23 +1,85 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Shirt from './Components/Pages/Shirt/Shirt';
+import Pant from './Components/Pages/Pant/Pant';
+import Panjabi from './Components/Pages/Panjabi/Panjabi';
+import LandingPage from './Components/Pages/LandingPage/LandingPage';
+import Home from './Components/Pages/Home/Home';
+import Offer from './Components/Pages/Offer/Offer';
+import ProductInfo from './Components/Pages/ProductInfo/ProductInfo';
+import Login from './Components/Pages/UserAccount/Login/Login';
+import Register from './Components/Pages/UserAccount/Register/Register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-modern-drawer/dist/index.css'
+import PrivateRoute from './Components/Pages/UserAccount/PrivateRoute/PrivateRoute';
+import Checkout from './Components/Pages/Checkout/Checkout';
+import Cart from './Components/Pages/Cart/Cart';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <LandingPage></LandingPage>,
+      children: [
+        {
+          path: "/",
+          element: <Home></Home>
+        },
+        {
+          path: "Shirt",
+          element: <Shirt></Shirt>
+        },
+        {
+          path: "Pant",
+          element: <Pant></Pant>
+        },
+        {
+          path: "Panjabi",
+          element: <PrivateRoute><Panjabi></Panjabi></PrivateRoute>
+        },
+        {
+          path: "offer",
+          element: <Offer></Offer>
+        },
+        {
+          path: "cart/viewProduct",
+          element: <Cart></Cart>
+        },
+        {
+          path: "cart/checkout",
+          element: <Checkout></Checkout>
+        },
+        {
+          path: "product/:id",
+          element: <ProductInfo></ProductInfo>
+        },
+        {
+          path: "user/login",
+          element: <Login></Login>
+        },
+        {
+          path: "user/register",
+          element: <Register></Register>
+        },
+      ]
+    }
+  ]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
