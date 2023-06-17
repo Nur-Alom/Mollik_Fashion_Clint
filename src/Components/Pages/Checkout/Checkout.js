@@ -3,14 +3,16 @@ import paymentLogo from '../../Images/card-logo.png';
 import { useForm } from 'react-hook-form';
 import useCart from '../../Hooks/useCart';
 import Footer from '../Footer/Footer';
+import { useBkash } from 'react-bkash';
 
 const Checkout = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { products, subTotal } = useCart();
+    const [cartProduct, setCartProduct] = useState([]);
+    const [bkashToken, setBkashToken] = useState({});
     const [loading, setLoading] = useState(false);
     const [discount, setDiscount] = useState(0);
     const [coupon, setCoupon] = useState(0);
-    const [cartProduct, setCartProduct] = useState([]);
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const { products, subTotal } = useCart();
 
     // Set Cart Product.
     useEffect(() => {
@@ -39,9 +41,75 @@ const Checkout = () => {
         console.log(data);
     }
 
-
     // Per Product Total Price.
     let productTotal = 0;
+
+
+    const { error, loading2, triggerBkash } = useBkash({
+        onSuccess: (data) => {
+            console.log(data); // this contains data from api response from onExecutePayment
+        },
+        onClose: () => {
+            console.log('Bkash iFrame closed');
+        },
+        bkashScriptURL: 'https://scripts.sandbox.bka.sh/versions/1.2.0-beta/checkout/bKash-checkout-sandbox.js',
+        amount: 1000,
+        onCreatePayment: async (paymentRequest) => {
+            // call your API with the payment request here
+            return await fetch('https://mf-server.onrender.com/bkash/create', {
+                method: 'POST',
+                body: JSON.stringify(paymentRequest),
+            }).then((res) => res.json());
+
+            // must return the following object:
+            // {
+            // 	paymentID: string;
+            // 	createTime: string;
+            // 	orgLogo: string;
+            // 	orgName: string;
+            // 	transactionStatus: string;
+            // 	amount: string;
+            // 	currency: string;
+            // 	intent: string;
+            // 	merchantInvoiceNumber: string;
+            // }
+        },
+        onExecutePayment: async (paymentID) => {
+            // call your executePayment API here
+            return await fetch('https://mf-server.onrender.com/bkash/execute', {
+                method: 'POST',
+            }).then((res) => res.json());
+
+            // it doesn't matter what you return here, any errors thrown here will be available on error return value of the useBkash hook
+        },
+    });
+
+    // //
+    // useEffect(() => {
+    //     fetch('https://mollikfashionserver-production.up.railway.app/cart/checkout/payment/bkashToken')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setBkashToken(data)
+    //             console.log(data)
+    //         })
+    // }, [])
+
+
+    // // 
+    // const makePayment = () => {
+    //     // console.log(token);
+    //     fetch(`http://localhost:5000/cart/checkout/payment/createBkashPayment`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'content-type': 'application/json',
+    //             Authorization: JSON.stringify(bkashToken)
+    //         },
+    //         body: JSON.stringify({})
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => console.log(data))
+    // };
+
 
     return (
         <div className='bg-slate-100 font-sans'>
@@ -191,7 +259,7 @@ const Checkout = () => {
                         <input className='cursor-pointer' required type="checkbox" name="agree-with-condition" id="agree-with-condition" />
                         <span className='font-medium text-base text-gray-800 ml-4'>I have read and agree to the <span className='text-orange-500 hover:underline cursor-pointer'>Terms and Conditions</span>, <span className='text-orange-500 hover:underline cursor-pointer'>Privacy Policy</span> and <span className='text-orange-500 hover:underline cursor-pointer'>Refund and Return Policy</span></span>
                     </span>
-                    <button className='font-semibold text-white bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 px-4 py-1 rounded'>Confirm Order</button>
+                    <button onClick={() => triggerBkash()} className='font-semibold text-white bg-orange-500 hover:bg-orange-600 border border-orange-500 hover:border-orange-600 px-4 py-1 rounded'>Confirm Order</button>
                 </div>
             </div>
             <Footer />

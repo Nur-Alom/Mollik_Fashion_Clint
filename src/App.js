@@ -35,7 +35,7 @@ function App() {
         },
         {
           path: "Panjabi",
-          element: <PrivateRoute><Panjabi></Panjabi></PrivateRoute>
+          element: <Panjabi></Panjabi>
         },
         {
           path: "offer",
@@ -43,11 +43,11 @@ function App() {
         },
         {
           path: "cart/viewProduct",
-          element: <Cart></Cart>
+          element: <PrivateRoute><Cart></Cart></PrivateRoute>
         },
         {
           path: "cart/checkout",
-          element: <Checkout></Checkout>
+          element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
         },
         {
           path: "product/:id",
