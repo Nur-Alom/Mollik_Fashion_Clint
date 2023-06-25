@@ -7,8 +7,8 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='bg-gray-800 px-20 mt-20 py-12'>
-            <div className='text-gray-300 text-center grid grid-cols-4 gap-12'>
+        <div className='bg-gray-800 px-20 mt-20 py-6 text-center'>
+            <div className='text-gray-300 text-center grid grid-cols-4 gap-12 py-12'>
                 <div className='text-start'>
                     <img className='w-3/5 h-auto mb-4' src={logo} alt="" />
                     <span>
@@ -64,6 +64,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
+            <p className='font-sans font-medium text-base text-white'>©Copyright 2022 <a className='font-mono font-semibold text-lg text-orange-500 italic duration-300 hover:underline' href="https://portfolio-dev-4e165.web.app" target="_blank" rel="noopener noreferrer">Nur-Dev</a> All rights reserved® "MollikFashionLTD".</p>
         </div>
     );
 };

@@ -45,10 +45,10 @@ const Login = () => {
                 <h1 className='mb-3 font-sans font-semibold text-base text-start text-gray-800'>Welcome to <span className='text-orange-500'>Mallik Fashion!</span> Please login</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div>
-                        <input {...register("loginMail", { required: true })} className='w-full font-sans font-semibold text-gray-800 px-2 py-2 border border-gray-200 bg-gray-100 rounded outline-0 mb-4' type="email" name="loginMail" id="loginMail" autoComplete='username' placeholder='Email' />
+                        <input {...register("loginMail", { required: true })} className='w-full font-sans font-semibold text-gray-800 px-2 py-2 border border-gray-200 bg-gray-100 rounded outline-0 mb-4' type="email" name="loginMail" id="loginMail" autoComplete='username' placeholder='Email' defaultValue="test@user.com" />
                         <br />
                         <div className='flex justify-between items-center border border-gray-200 bg-gray-100 rounded mb-2'>
-                            <input {...register("loginPass", { required: true, minLength: 6 })} className='w-full font-sans font-semibold text-gray-800 px-2 py-2 bg-gray-100 outline-0' type={passView ? "text" : "password"} name="loginPass" id="loginPass" autoComplete='current-password' placeholder='Password' />
+                            <input {...register("loginPass", { required: true, minLength: 6 })} className='w-full font-sans font-semibold text-gray-800 px-2 py-2 bg-gray-100 outline-0' type={passView ? "text" : "password"} name="loginPass" id="loginPass" autoComplete='current-password' placeholder='Password' defaultValue="testUser" />
                             <button type='button' onClick={() => passwordView()} className='me-2'>
                                 {passView ?
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">

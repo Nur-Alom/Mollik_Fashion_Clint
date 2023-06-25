@@ -30,7 +30,9 @@ const Home = () => {
             <div className='px-20'>
                 <div className='w-full bg-cover bg-no-repeat py-60' style={{ backgroundImage: `url(${require('./Images/banner1.jpg')})` }}>
                     <div className='pl-12'>
-                        <button className='px-3 py-1 text-white hover:bg-green-500 font-bold font-sans rounded-md border border-white hover:border-green-500'>SHOP NOW</button>
+                        <h2 className='font-mono text-4xl font-semibold text-white leading-normal'>Mollik Fashion House!!</h2>
+                        <p className='font-mono text-xl font-medium text-white leading-normal'>Product Are Available in Store & Online All Time.</p>
+                        <button className='px-3 py-1 mt-6 text-white hover:bg-green-500 font-bold font-sans rounded-md border border-white hover:border-green-500 duration-300'>SHOP NOW</button>
                     </div>
                 </div>
                 <div className='flex justify-between items-center my-28 gap-12'>
