@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const useCart = () => {
     const [cartLength, setCartLength] = useState(0);
@@ -24,6 +25,7 @@ const useCart = () => {
             }
         }
         localStorage.setItem("cart", JSON.stringify(cart));
+        toast.success("Add Product in Your Cart Successfully!!")
     };
 
 

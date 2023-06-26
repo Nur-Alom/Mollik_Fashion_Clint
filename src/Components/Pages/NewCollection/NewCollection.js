@@ -26,7 +26,7 @@ const NewCollection = () => {
             <div className='bg-white px-20 pt-12 pb-16 grid grid-cols-4 gap-5'>
                 {
                     products.map(product => <div key={product._id} className='shadow-2xl bg-white rounded-lg'>
-                        <NavLink to={`/product/${product.id}`}>
+                        <NavLink to={`/product/${product._id}`}>
                             <div className=''>
                                 <img className='w-52 h-60 mx-auto p-5' src={product.images[0]} alt="" />
                             </div>

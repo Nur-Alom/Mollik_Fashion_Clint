@@ -69,7 +69,7 @@ const Checkout = () => {
             address: 'Barishal Bangladesh',
             phone: '01778799787'
         }
-        fetch(`http://localhost:5000/order`, {
+        fetch(`https://mf-ssl-server.onrender.com/order`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
